@@ -1,0 +1,26 @@
+server:
+  port: 8050
+eureka:
+  instance:
+    prefer-ip-address: true # 优选通过IP地址找到对应的服务名称
+  client:
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
+#    prefer-same-zone-eureka: true
+zuul:
+  ignored-services: '*'
+  routes:
+    user-service:
+      path: /user-service/**
+      serviceId: user-service
+    order-service:
+      path: /order-service/**
+      serviceId: order-service
+spring:
+  application:
+    name: gateway-zuul
+  cloud:
+    inetutils:
+      preferred-networks:
+      - 10.0 # 设置注册到Eureka中心的优选服务地址
