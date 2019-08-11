@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="404" type="HTML" />
       <mapping pattern="Dockerfile" type="PLAIN_TEXT" />
+      <mapping pattern="123" type="PLAIN_TEXT" />
       <mapping pattern="404..htm" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
